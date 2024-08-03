@@ -1,0 +1,34 @@
+# Virtual Environment
+venv/
+env/
+.venv/
+.env/
+
+# IDEs and Editors
+.DS_Store
+.idea/
+.vscode/
+*.suo
+*.ntvs_analysis.dat
+*.ncb
+*.sdf
+*.dbmdl
+*.bak
+*.swp
+*.swo
+*.swn
+
+# Django
+db.sqlite3
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+/static/
+/media/
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
