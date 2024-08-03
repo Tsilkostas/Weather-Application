@@ -1,8 +1,8 @@
-Weather Application
-Overview
+### Weather Application
+# Overview
 This is a weather application built with Django and Docker. It provides a RESTful API for managing weather data, including basic CRUD operations. The application is configured with JWT authentication for secure access and uses SQLite for its database.
 
-Features
+# Features
 RESTful API: Perform CRUD operations on weather data.
 JWT Authentication: Secure your API endpoints with JSON Web Tokens.
 Swagger UI: Easily explore and test the API using Swagger.
