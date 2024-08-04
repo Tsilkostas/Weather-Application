@@ -24,7 +24,7 @@ Follow these steps to get the application up and running:
 ### 1. Clone the Repository
 
 
-git clone [https://github.com/yourusername/weather-app.git](https://github.com/Tsilkostas/Weather-Application.git)
+git clone https://github.com/Tsilkostas/Weather-Application.git
 
 cd weather-app
 
