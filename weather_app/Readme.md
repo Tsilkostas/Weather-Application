@@ -1,23 +1,32 @@
-### Weather Application
-# Overview
-This is a weather application built with Django and Docker. It provides a RESTful API for managing weather data, including basic CRUD operations. The application is configured with JWT authentication for secure access and uses SQLite for its database.
+# Weather Application
 
-# Features
-RESTful API: Perform CRUD operations on weather data.
-JWT Authentication: Secure your API endpoints with JSON Web Tokens.
-Swagger UI: Easily explore and test the API using Swagger.
+## Overview
 
-Prerequisites
-Docker
-Docker Compose
+Welcome to the Weather Application, a Django-based project designed to manage weather data efficiently. This application features a RESTful API that supports basic CRUD operations and is secured using JWT authentication. It runs within Docker containers and uses SQLite as its database.
 
-Installation
+## Features
+
+- **RESTful API**: Perform CRUD operations on weather data.
+- **JWT Authentication**: Secure your API endpoints with JSON Web Tokens.
+- **Swagger UI**: Explore and test the API endpoints using Swagger.
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- **Docker**: [Install Docker](https://docs.docker.com/get-docker/)
+- **Docker Compose**: [Install Docker Compose](https://docs.docker.com/compose/install/)
+
+## Installation
+
 Follow these steps to get the application up and running:
 
-1. Clone the Repository:
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/yourusername/weather-app.git
 cd weather-app
-2. Create a .env File:
+1. Create a .env File
 cp .env.example .env
 Edit .env to set your environment variables. Example:
 SECRET_KEY='your-secret-key'
@@ -25,7 +34,7 @@ DEBUG=True
 ALLOWED_HOSTS='127.0.0.1,localhost,0.0.0.0'
 DATABASE_URL='sqlite:///db.sqlite3'
 3. Build and Run the Application:
-Use Docker Compose to build and start the application:
+Use Docker Compose to build and start the application
 docker-compose up --build
 This command builds the Docker images and starts the containers as specified in the docker-compose.yml file.
 4. Apply Migrations
@@ -36,3 +45,12 @@ The application should now be running at http://127.0.0.1:8000/. You can access 
 6. Stopping the Application:
 To stop the application, use:
 docker-compose down
+
+### Static Files
+
+In Django projects, static files (CSS, JavaScript, images) are collected into a single directory for easier management and serving in production.
+
+**To collect static files, run:**
+```bash
+python manage.py collectstatic
+

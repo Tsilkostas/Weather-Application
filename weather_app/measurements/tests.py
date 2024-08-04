@@ -34,7 +34,7 @@ class MeasurementAPITestCase(APITestCase):
     def test_create_measurement(self):
         # Ensure the data being created is unique by modifying the timestamp or station_id
         unique_measurement_data = self.measurement_data.copy()
-        unique_measurement_data['timestamp'] = '2024-01-01T01:00:00Z'  # Change timestamp for uniqueness
+        unique_measurement_data['timestamp'] = '2024-01-01T01:00:00Z' 
 
         response = self.client.post('/api/measurements/', unique_measurement_data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
@@ -43,7 +43,6 @@ class MeasurementAPITestCase(APITestCase):
 
 
     def test_update_measurement(self):
-        # Full data including all required fields
         update_data = {
             'timestamp': '2024-01-01T00:00:00Z',
             'station_id': 'Station1',
@@ -54,12 +53,9 @@ class MeasurementAPITestCase(APITestCase):
             'rain_gauge': 0.0
         }
         
-        # Assuming the measurement already exists from setUp
         response = self.client.put('/api/measurements/update/Station1/2024-01-01T00:00:00Z/', update_data, format='json')
-        print(response.data)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-        # Verify that the update was successful
         updated_measurement = Measurement.objects.get(timestamp='2024-01-01T00:00:00Z', station_id='Station1')
         self.assertEqual(updated_measurement.temperature, 30.0)
 
@@ -68,7 +64,7 @@ class MeasurementAPITestCase(APITestCase):
 
     def test_create_measurement_invalid_data(self):
         invalid_data = self.measurement_data.copy()
-        invalid_data['temperature'] = 1000.0  # Invalid temperature
+        invalid_data['temperature'] = 1000.0 
         response = self.client.post('/api/measurements/', invalid_data, format='json')
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
