@@ -23,34 +23,45 @@ Follow these steps to get the application up and running:
 
 ### 1. Clone the Repository
 
-```bash
+
 git clone https://github.com/yourusername/weather-app.git
 cd weather-app
-1. Create a .env File
+
+### 2. Create a .env File
+Copy the example environment file and edit it to set your environment variables:
+
 cp .env.example .env
-Edit .env to set your environment variables. Example:
-SECRET_KEY='your-secret-key'
-DEBUG=True
-ALLOWED_HOSTS='127.0.0.1,localhost,0.0.0.0'
-DATABASE_URL='sqlite:///db.sqlite3'
-3. Build and Run the Application:
-Use Docker Compose to build and start the application
-docker-compose up --build
+* Edit .env to include:
+
+* SECRET_KEY='your-secret-key'
+* DEBUG=True
+* ALLOWED_HOSTS='127.0.0.1,localhost,0.0.0.0'
+* DATABASE_URL='sqlite:///db.sqlite3'
+
+### 3. Build and Run the Application
+Use Docker Compose to build and start the application:
+
+docker-compose up --build.
+
 This command builds the Docker images and starts the containers as specified in the docker-compose.yml file.
-4. Apply Migrations
+
+### 4. Apply Migrations
 Open a new terminal and run the following command to apply database migrations:
 docker-compose exec web python manage.py migrate
-5. Access the Application
+
+### 5. Access the Application
 The application should now be running at http://127.0.0.1:8000/. You can access the Swagger UI at http://127.0.0.1:8000/swagger/ to explore the API endpoints.
-6. Stopping the Application:
+
+### 6. Stopping the Application
 To stop the application, use:
+
 docker-compose down
 
 ### Static Files
-
 In Django projects, static files (CSS, JavaScript, images) are collected into a single directory for easier management and serving in production.
 
-**To collect static files, run:**
-```bash
+To collect static files, run:
+
 python manage.py collectstatic
+This command gathers all static files into the directory specified by the STATIC_ROOT setting in your settings.py.
 
