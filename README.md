@@ -25,6 +25,7 @@ Follow these steps to get the application up and running:
 
 
 git clone https://github.com/yourusername/weather-app.git
+
 cd weather-app
 
 ### 2. Create a .env File
